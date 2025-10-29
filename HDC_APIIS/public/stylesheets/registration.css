@@ -1,0 +1,271 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #063f91;
+}
+
+/* ===== Container ===== */
+.container {
+  position: relative;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container header {
+  position: relative;
+  color: #222;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.container header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 3px;
+  width: 27px;
+  border-radius: 8px;
+  background-color: #063f91;
+}
+
+/* ===== Form Layout ===== */
+.container form {
+  position: relative;
+  margin-top: 20px;
+  height: 70vh;
+  width: 45vw;
+  border: none;
+  overflow: hidden;
+}
+
+.container form .form {
+  position: absolute;
+  background-color: #fff;
+  border: none;
+  transition: 1s ease;
+}
+
+.container form .form.second {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(103%);
+}
+
+form.sectionActive .form.second {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+form.sectionActive .form.first {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-103%);
+}
+
+/* ===== Titles & Fields ===== */
+.container .form .title {
+  margin: 20px 0;
+  color: #222;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.form .fields {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form .fields .input-field {
+  flex: 1 1 calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Inputs & Labels ===== */
+.input-field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.input-field input,
+.input-field select {
+  height: 42px;
+  padding: 0 12px;
+  margin: 4px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87);
+  border: 1px solid rgba(0, 0, 0, 0.38);
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Remove blue border/shadow on focus */
+.input-field input:is(:focus, :valid),
+.input-field select:focus {
+  border-color: rgba(0, 0, 0, 0.38);
+  box-shadow: none;
+}
+
+.input-field input::placeholder {
+  color: rgba(60, 60, 67, 0.6);
+}
+
+/* ===== Select Styling ===== */
+.input-field select {
+  color: rgba(60, 60, 67, 0.6);
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.input-field select option {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.input-field select:valid {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/* ===== Custom File Input (50% width) ===== */
+.input-field.profile-file {
+  flex: 1 1 calc(50% - 20px); /* half width like others */
+  display: flex;
+  flex-direction: column;
+}
+
+.file-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.file-input-container input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 42px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-input-container .file-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.38);
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-input-container .file-label:hover {
+  background-color: #f4f4f4;
+}
+
+.file-input-container .file-text {
+  font-size: 14px;
+  color: rgba(60, 60, 67, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+}
+
+.file-input-container input[type="file"]:focus + .file-label {
+  border-color: rgba(0, 0, 0, 0.38);
+  box-shadow: none;
+}
+
+
+/* Remove focus shadow */
+.file-input-container input[type="file"]:focus + .file-label {
+  border-color: rgba(0, 0, 0, 0.38);
+  box-shadow: none;
+}
+
+
+/* ===== Buttons ===== */
+.container .form .nextBtn,
+.backBtn,
+.submitBtn {
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 160px;
+  width: 100%;
+  margin-top: 25px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #2557e2;
+  transition: all 0.3s linear;
+}
+
+.form .nextBtn:hover {
+  background-color: #265df2;
+}
+
+.form #academic_form_buttons {
+  margin-top: 14vh;
+  display: flex;
+  gap: 12px;
+  flex-direction: row;
+}
+
+.form #academic_form_buttons .submitBtn input {
+  background-color: #2557e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form #academic_form_buttons .submitBtn input:hover {
+  background-color: #265df2;
+}
+
+/* ===== Remove Arrows from Number Input ===== */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

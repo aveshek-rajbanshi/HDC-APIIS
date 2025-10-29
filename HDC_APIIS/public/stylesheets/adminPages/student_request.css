@@ -1,0 +1,153 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Layout */
+.student-request-dashboard {
+  position: absolute;
+  left: 17%;
+  top: 0;
+  width: calc(100vw - 260px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f6f8;
+  padding: 30px 40px;
+}
+
+/* Header */
+.dashboard-req-header {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  border-bottom: 2px solid #e0e6eb;
+  margin-bottom: 25px;
+}
+
+.dashboard-req-header h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Table */
+.student-list-table {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.student-list-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-list-table thead {
+  background-color: #f8fafc;
+  text-align: left;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e0e6eb;
+}
+
+.student-list-table th {
+  padding: 16px 20px;
+  color: #555;
+  font-weight: 600;
+}
+
+.student-list-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.student-list-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.student-list-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e0e6eb;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Student Info */
+.student-name-warpper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.std-profile-box {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #cce5ff;
+}
+
+/* ===== Buttons (using <a> tags) ===== */
+.student-list-table a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 8px;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+/* Accept Button */
+a.accept-btn {
+  background-color: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
+}
+a.accept-btn:hover {
+  background-color: #d1fae5;
+}
+
+/* Reject Button */
+a.reject-btn {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+a.reject-btn:hover {
+  background-color: #fee2e2;
+}
+
+/* Pending (if needed as button later) */
+a.pending-btn {
+  background-color: #fff7ed;
+  color: #b45309;
+  border-color: #ffd09a;
+}
+a.pending-btn:hover {
+  background-color: #ffedd5;
+}
+
+.status-pending {
+  color: #b45309;
+  background-color: #fff7ed;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
