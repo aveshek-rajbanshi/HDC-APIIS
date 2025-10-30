@@ -152,7 +152,7 @@
              <!-- Secondary Nav -->
              <ul class="nav-list secondary-nav">
                  <li class="nav-item">
-                     <a href="../../Backend/logout_action.php" class="nav-link">
+                     <a href="../../../Backend/logout_action.php" class="nav-link">
                          <span class="material-symbols-rounded">logout</span>
                          <span class="nav-label">Log Out</span>
                      </a>

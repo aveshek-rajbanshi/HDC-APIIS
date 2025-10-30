@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +13,7 @@
     <title>admin</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!-- <link rel="stylesheet" href="../../public/stylesheets/side_navbar.css"> -->
-    <link rel="stylesheet" href="../../public/stylesheets/student_dashboard.css">
+    <link rel="stylesheet" href="../../public/stylesheets/studentPages/student_dashboard.css">
 </head>
 <body>
 
@@ -20,7 +27,7 @@
              <!-- header -->
            <header class="sidebar-header">
              <a class="header-logo">
-                 <img src="logo.jpeg" alt="coding">
+               <h5><span>HDC<br>APIIS</span></h5>
              </a>
              <div class="sidebar-toggler">
                  <span class="material-symbols-rounded">chevron_left</span>
@@ -151,7 +158,7 @@
              <!-- Secondary Nav -->
              <ul class="nav-list secondary-nav">
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="../../Backend/logout_action.php" class="nav-link">
                          <span class="material-symbols-rounded">logout</span>
                          <span class="nav-label">Sign Out</span>
                      </a>
@@ -179,8 +186,8 @@
             <div class="user-info-wrapper">
               <ul class="user-items-list">
                 <li class="user-details">
-                    <h5>Preyanch Rajbanshi</h5>
-                    <h6>preyanchrajbanshi@himalayadarshancollege.edu</h6>
+                    <h5><?php echo $_SESSION['$userName'] ?></h5>
+                    <h6><?php echo $_SESSION['$userEmail'] ?></h6>
                 </li>
                 <li class="user-detail-link">
                     <a href="#" class="link">
@@ -195,7 +202,7 @@
                     </a>
                 </li>
                 <li class="user-detail-link">
-                    <a href="#" class="link">
+                    <a href="../../Backend/logout_action.php" class="link">
                      <span class="material-symbols-rounded">logout</span>
                      <span class="text-btn">Logout</span>
                     </a>

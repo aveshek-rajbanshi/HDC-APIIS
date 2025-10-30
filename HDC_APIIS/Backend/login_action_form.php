@@ -33,6 +33,7 @@ if(isset($_POST['Login'])){
             break;
     }
 
+
     // now, getting requested user from table according to the role.
     $sqlQuery = "SELECT * FROM $table WHERE Email = '$user_email' LIMIT 1";
     // executing the mysql query
@@ -50,11 +51,11 @@ if(isset($_POST['Login'])){
 
             if($role == "student"){
                 if($status == "pending"){
-                    echo "Your registration is pending for admin approval";
+                    header("Location: ../Frontend/admin/admin_pages/student_waitingpage.php");
                     exit;
                 }else if($status == "rejected"){
-                    echo "Your registration request was rejected by admin.";
-                }else if($status == "approved"){
+                     header("Location: ../Frontend/admin/admin_pages/student_reject.php");
+                }else if($status == "approval"){
                     // student is approved by admin so, he/she can login or redirect to dashboard.
                      $_SESSION['$userId']    = $user['Id'];
                      $_SESSION['$userEmail'] = $user['Email'];
@@ -100,6 +101,10 @@ if(isset($_POST['Login'])){
             echo "Invalid useremail and password.";
         }
     }else{
+        if($user_role == "student"){
+             header("Location: ../Frontend/admin/admin_pages/student_reject.php");
+            exit;
+        }
         echo "User not found!";
     }
 

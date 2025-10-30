@@ -53,13 +53,13 @@ include "../../../Backend/admin/student_request_action.php";
                                   <td>".$getUser['Semester']."</td>
                                   <td><span class='status-pending'>".$getUser['status']."</span></td>
                                   <td>
-                                    <a href='#' class='accept-btn'>Accept</a>
-                                    <a href='#' class='reject-btn'>Reject</a>
+                                    <a href='../../../Backend/admin/student_reqaccept_action.php?id=$getUser[Id]' class='accept-btn'>Accept</a>
+                                    <a href='../../../Backend/admin/student_reqreject_action.php?id=$getUser[Id]' class='reject-btn'>Reject</a>
                                   </td>
                                  </tr>";
                         }
                       }else{
-                        echo "No Data to Show";
+                         echo "<tr><td colspan='6' class='no-req-available'>No Request Available.</td></tr>";
                       }
                   ?>
                </tbody>
