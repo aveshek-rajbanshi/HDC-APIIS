@@ -57,10 +57,10 @@ if(isset($_POST['Login'])){
                      header("Location: ../Frontend/admin/admin_pages/student_reject.php");
                 }else if($status == "approval"){
                     // student is approved by admin so, he/she can login or redirect to dashboard.
-                     $_SESSION['$userId']    = $user['Id'];
-                     $_SESSION['$userEmail'] = $user['Email'];
-                     $_SESSION['$userName']  = $user['Full_Name'];
-                     $_SESSION['$userRole']  = $user_role;
+                     $_SESSION['userId']    = $user['Id'];
+                     $_SESSION['userEmail'] = $user['Email'];
+                     $_SESSION['userName']  = $user['Full_Name'];
+                     $_SESSION['userRole']  = $user_role;
 
                      header("Location: ../Frontend/dashboards/student_dashboard.php");
                      exit;

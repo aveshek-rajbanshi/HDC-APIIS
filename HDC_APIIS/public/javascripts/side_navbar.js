@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function() {
+// your-script.js
+const downarrow = document.querySelector("#downarrowBtn");
+
+downarrow.addEventListener("click", () => {
+    document.querySelector(".user-info-wrapper").classList.toggle("show");
+});
+
+
+
+function sidebar(){
 
 // DROPDOWN MENU
 const toogleDropdown = (dropdown, menu, isOpen) => {
@@ -6,11 +17,11 @@ const toogleDropdown = (dropdown, menu, isOpen) => {
 }
 
 
-// const closeAllDropdowns = () => {
-//     document.querySelectorAll(".dropdown-container.open").forEach((openDropdown) => {
-//         toggleDropdown(openDropdown, openDropdown.querySelector(".dropdown.menu"), false);
-//     })
-// }
+const closeAllDropdowns = () => {
+    document.querySelectorAll(".dropdown-container.open").forEach((openDropdown) => {
+        toggleDropdown(openDropdown, openDropdown.querySelector(".dropdown.menu"), false);
+    })
+}
 
 
 //click event to all dropdown toggles
@@ -28,18 +39,36 @@ document.querySelectorAll(".dropdown-toggle").forEach((dropdownToggle) => {
 
 
 // SIDE NAVBAR
-document.querySelectorAll(".sidebar-toggler, .sidebar-menu-button").forEach((button) => {
-    button.addEventListener("click", () => {
+// document.querySelectorAll(".sidebar-toggler, .sidebar-menu-button").forEach((button) => {
+//     button.addEventListener("click", () => {
 
-    // closeAllDropdowns();
+//     // closeAllDropdowns();
 
-    document.querySelector(".sidebar").classList.toggle("collapsed");
-});
-});
+//     document.querySelector(".sidebar").classList.toggle("collapsed");
+// });
+// });
 
 
 if(window.innerWidth <= 1024){
     document.querySelector(".sidebar").classList.toggle("collapsed");
 }
+}
+sidebar();
 
 
+// function userinfoSettingCard(){
+// let downarrow = document.querySelector(".downarrowBtn");
+
+// downarrow.addEventListener("click",()=>{
+//     console.log("clicked")
+// })
+// }
+// userinfoSettingCard();
+
+
+
+
+// Wait for DOM to be ready
+// document.addEventListener("DOMContentLoaded", userinfoSettingCard);
+// or simply put your <script> tag just before </body>
+})

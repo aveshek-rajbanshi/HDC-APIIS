@@ -10,35 +10,28 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>admin</title>
+    <title>student-dashboard</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <!-- <link rel="stylesheet" href="../../public/stylesheets/side_navbar.css"> -->
-    <link rel="stylesheet" href="../../public/stylesheets/studentPages/student_dashboard.css">
+     <link rel="stylesheet" href="../../public/stylesheets/side_navbar.css">
 </head>
 <body>
 
    <div class="main">
        <div class="navContainer">
-         <div class="sidebar-menu-button">
-           <span class="material-symbols-rounded">menu</span>
-         </div>
-     
+    
          <div class="sidebar">
              <!-- header -->
            <header class="sidebar-header">
              <a class="header-logo">
                <h5><span>HDC<br>APIIS</span></h5>
              </a>
-             <div class="sidebar-toggler">
-                 <span class="material-symbols-rounded">chevron_left</span>
-             </div>
            </header>
      
            <nav class="sidebar-nav">
              <!-- Primary Nav -->
              <ul class="nav-list primary-nav">
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="student_dashboard.php" class="nav-link">
                          <span class="material-symbols-rounded">widgets</span>                    
                          <span class="nav-label">Dashboard</span>
                      </a>
@@ -53,17 +46,17 @@ session_start();
                  <li class="nav-item dropdown-container">
                      <a href="#" class="nav-link dropdown-toggle">
                          <span class="material-symbols-rounded">folder_code</span>
-                         <span class="nav-label">Project</span>
+                         <span class="nav-label">Senior's Project</span>
                          <span class="material-symbols-rounded dropdown-icon">keyboard_arrow_down</span>
                      </a>
                      <!-- Dropdown-Styling -->
                      <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-title">Project</a>
+                           <a href="#" class="nav-link dropdown-title">Senior's Project</a>
                          </li>
      
                          <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-link">All Project</a>
+                           <a href="#" class="nav-link dropdown-link">View All Project</a>
                          </li>
      
                          <li class="nav-item">
@@ -72,87 +65,30 @@ session_start();
      
                      </ul>
                  </li>
-     
-                 <li class="nav-item">
-                     <a href="#" class="nav-link">
-                         <span class="material-symbols-rounded">add_notes</span>
-                         <span class="nav-label">Internship</span>
-                     </a>
-                      <!-- Dropdown-Styling -->
-                     <ul class="dropdown-menu">
-                         <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-title">Internship</a>
-                         </li>
-                     </ul>
-                 </li>
 
-                 <li class="nav-item dropdown-container">
+                  <li class="nav-item dropdown-container">
                      <a href="#" class="nav-link dropdown-toggle">
-                         <span class="material-symbols-rounded">school</span>
-                         <span class="nav-label">Faculty</span>
+                         <span class="material-symbols-rounded">cloud_download</span>
+                         <span class="nav-label">Download Form</span>
                          <span class="material-symbols-rounded dropdown-icon">keyboard_arrow_down</span>
                      </a>
-                      <!-- Dropdown-Styling -->
+                     <!-- Dropdown-Styling -->
                      <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-title">Faculty</a>
-                         </li>
-
-                         <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-link">BIM</a>
+                           <a href="#" class="nav-link dropdown-title">Download Form</a>
                          </li>
      
                          <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-link">BCA</a>
+                           <a href="#" class="nav-link dropdown-link">Project Form</a>
                          </li>
-
-                         <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-link">Bsc.IT</a>
-                         </li>
-
-                     </ul>
-                 </li>
-
-                  <li class="nav-item">
-                     <a href="#" class="nav-link">
-                         <span class="material-symbols-rounded">analytics</span>
-                         <span class="nav-label">Student Request</span>
-                     </a>
-                      <!-- Dropdown-Styling -->
-                     <ul class="dropdown-menu">
-                         <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-title">Student Request</a>
-                         </li>
-                     </ul>
-                 </li>
      
-     
-                 <li class="nav-item">
-                     <a href="#" class="nav-link">
-                         <span class="material-symbols-rounded">analytics</span>
-                         <span class="nav-label">Analytics / Reports</span>
-                     </a>
-                      <!-- Dropdown-Styling -->
-                     <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-title">Analytics / Reports</a>
+                           <a href="#" class="nav-link dropdown-link">Internship Form</a>
                          </li>
+     
                      </ul>
                  </li>
 
-                 <li class="nav-item">
-                     <a href="#" class="nav-link">
-                         <span class="material-symbols-rounded">settings</span>
-                         <span class="nav-label">Setting</span>
-                     </a>
-                      <!-- Dropdown-Styling -->
-                     <ul class="dropdown-menu">
-                         <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-title">Setting</a>
-                         </li>
-                     </ul>
-                 </li>
-     
              </ul>
      
              <!-- Secondary Nav -->
@@ -176,45 +112,44 @@ session_start();
                 <span class="notify"></span>
                 <span class="material-symbols-rounded">notifications</span>
               </div>
-              <div class="profile-wrapper">
-                <div class="profile-image-holder">
-                  <img src="../../public/images/profile.jpeg" alt="profile-Picture">
-                </div>
-                <span class="material-symbols-rounded">keyboard_arrow_down</span>
-                </div>
+              <div class="profile-wrapper" id="profileWrapper"> <!-- Ye id add karo -->
+               <div class="profile-image-holder">
+                <img id="prosetting" src="../../public/images/profile.jpeg" alt="profile">
+               </div>
+               <span id="downarrowBtn" class="material-symbols-rounded">keyboard_arrow_down</span>
+              </div>
             </div>
-            <div class="user-info-wrapper">
-              <ul class="user-items-list">
-                <li class="user-details">
-                    <h5><?php echo $_SESSION['$userName'] ?></h5>
-                    <h6><?php echo $_SESSION['$userEmail'] ?></h6>
-                </li>
-                <li class="user-detail-link">
-                    <a href="#" class="link">
-                      <span class="material-symbols-rounded">edit</span>
-                      <span class="text-btn">Edit Profile</span>
-                    </a>
-                </li>
-                <li class="user-detail-link">
-                    <a href="#" class="link">
-                     <span class="material-symbols-rounded">key</span>
-                     <span class="text-btn">Change Password</span>
-                    </a>
-                </li>
-                <li class="user-detail-link">
-                    <a href="../../Backend/logout_action.php" class="link">
-                     <span class="material-symbols-rounded">logout</span>
-                     <span class="text-btn">Logout</span>
-                    </a>
-                </li>
-              </ul>
-            </div>
-        </div>
+
+         <!-- user setting card-container -->
+<div class="user-info-wrapper" id="userDropdown">
+    <ul class="user-menu">
+
+        <li class="menu-item">
+            <a href="#" class="menu-link">
+                <span class="material-symbols-rounded">person</span>
+                My Profile
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">
+                <span class="material-symbols-rounded">key</span>
+                Change Password
+            </a>
+        </li>
+        <li class="menu-item logout">
+            <a href="../../Backend/logout_action.php" class="menu-link">
+                <span class="material-symbols-rounded">logout</span>
+                Logout
+            </a>
+        </li>
+    </ul>
+</div>
+
        </div>
    </div>
 
     
 
-    <script src="../../public/javascripts/side_navbar.js"></script>
+    <script src="../../public/javascripts/side_navbar.js" defer></script>
 </body>
 </html>
