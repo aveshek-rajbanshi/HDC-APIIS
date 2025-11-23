@@ -79,11 +79,11 @@ session_start();
                          </li>
      
                          <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-link">Project Form</a>
+                           <a href="../../Backend/project&internship_form_download.php?file=ProjectDetailSubmissionForm" class="nav-link dropdown-link">Project Form</a>
                          </li>
      
                          <li class="nav-item">
-                           <a href="#" class="nav-link dropdown-link">Internship Form</a>
+                           <a href="../../Backend/project&internship_form_download.php?file=StudentInternshipForm" class="nav-link dropdown-link">Internship Form</a>
                          </li>
      
                      </ul>
