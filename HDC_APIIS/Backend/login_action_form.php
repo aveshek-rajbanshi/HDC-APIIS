@@ -101,10 +101,10 @@ if(isset($_POST['Login'])){
             echo "Invalid useremail and password.";
         }
     }else{
-        if($user_role == "student"){
-             header("Location: ../Frontend/admin/admin_pages/student_reject.php");
-            exit;
-        }
+        // if($user_role == "student"){
+        //      header("Location: ../Frontend/admin/admin_pages/student_reject.php");
+        //     exit;
+        // }
         echo "User not found!";
     }
 

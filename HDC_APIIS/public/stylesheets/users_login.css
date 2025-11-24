@@ -22,6 +22,24 @@ html,body{
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
+.container .header-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container .header-wrapper a{
+  text-decoration: none;
+  color: #222;
+}
+
+.container .header-wrapper a i{
+  font-size: 18px;
+  font-weight: 550;
+}
+
 .container header{
     position: relative;
     color: #222;
@@ -176,7 +194,7 @@ html,body{
 }
 
 .form-link{
-    margin-top: 8%;
+    margin-top: 6%;
     font-size: 12px;
     font-weight: 520;
     width: 100%;

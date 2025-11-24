@@ -4,11 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../../public/stylesheets/registration.css">
 </head>
 <body>
   <div class="container">
-    <header>Registration</header>
+    <div class="header-wrapper">
+      <header>Registration</header>
+      <a href="../../Frontend/landingpage/landingpage.html">
+        <i class="ri-close-fill"></i>
+      </a>
+    </div>
 
     <form action="../../Backend/registration_action_form.php" method="POST" enctype="multipart/form-data">
       <!-- FIRST FORM -->
@@ -19,6 +25,7 @@
           <div class="input-field">
             <label for="std_name">Student Name</label>
             <input type="text" name="std_name" id="std_name" placeholder="Enter your name" required />
+            <!-- <span id="name-error">Name is required.</span> -->
           </div>
 
           <div class="input-field">
@@ -61,8 +68,9 @@
           </div>
 
         </div>
-
-        <div class="nextBtn"><span>Next</span></div>
+        <div class="nextBtn-wrapper">
+          <div class="nextBtn"><span>Next</span></div>
+        </div>
       </div>
 
       <!-- SECOND FORM -->
@@ -128,7 +136,7 @@
     </form>
   </div>
 
-  <!-- ===== Simple JS to Show File Name ===== -->
+  <!-- ===== Simple JS to Show File Name =====
   <script>
     const fileInput = document.getElementById('profile_picture');
     const fileText = document.querySelector('.file-text');
@@ -140,7 +148,7 @@
         fileText.textContent = 'Choose a file';
       }
     });
-  </script>
+  </script> -->
 
     <script src="../../public/javascripts/std_script.js"></script>
 </body>

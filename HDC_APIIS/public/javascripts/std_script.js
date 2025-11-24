@@ -1,4 +1,5 @@
-const form = document.querySelector(".container form"),
+function formAction(){
+    const form = document.querySelector(".container form"),
       nextBtn = form.querySelector(".nextBtn"),
       backBtn = form.querySelector(".backBtn"),
       submitBtn = form.querySelector('.submitBtn'),
@@ -18,6 +19,13 @@ nextBtn.addEventListener("click",()=>{
 backBtn.addEventListener("click",()=>{
     form.classList.remove("sectionActive");
 })
+}
+formAction();
+
+
+function formValidation(){
+
+}
 
 
 
